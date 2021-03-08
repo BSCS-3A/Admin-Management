@@ -243,57 +243,54 @@
 
     
     <div class="modal fade" id="otp" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-      <div class="modal-dialog">
-  <div class="modal-content">
-      <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h4 class="modal-title custom_align" id="Heading">REGISTER</h4>
-      </div>
-
-      <div class="modal-body">
-                <div class="form-group">
-                    <input class="form-control " type="text" placeholder="Surname">
-                </div>
-                <div class="form-group">              
-                    <input class="form-control " type="text" placeholder="Firstname">
-                </div>
-                <div class="form-group">
-                    <input class="form-control " type="text" placeholder="Middle Name">
-                </div>
-                <div class="form-group">
-                    <input class="form-control " type="text" placeholder="Email Address">
-                </div>
-                <div class="form-group">
-                    <input class="form-control " type="password" placeholder="Password" id="password-field" value="secret" >
-                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" ></span>
-
-                </div>
-                <div class="form-group">
-                    <input class="form-control " type="password" placeholder="Confirm Password" id="password-field" value="secret">
-                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" ></span>
-                </div>
-                
-            </div>
-
-        <div class="container container1" >
-            <label for="photo" width="100%" >Upload photo</label><br/>
-            <input type="file" name="newupload" id="newupload"/><br/>
-            <span id="admin_newupload_errorloc" class="error"></span>
-           
-            
+        <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title custom_align" id="Heading">REGISTER</h4>
         </div>
-
-
-    <div class="modal-footer ">
-    <button type="button" class="btn btn-success" id="go" ><span class="glyphicon glyphicon-ok-sign"></span> Save Account</button>
-    <button type="button" class="btn btn-default" id= "cancel2" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-  </div>
+  <form action="../php/backFun_adAccnts_v0_1.php" method="POST">
+        <div class="modal-body">
+                  <div class="form-group">
+                      <input class="form-control" name="admin_lname" type="text" placeholder="Surname">
+                  </div>
+                  <div class="form-group">              
+                      <input class="form-control" name="admin_fname" type="text" placeholder="Firstname">
+                  </div>
+                  <div class="form-group">
+                      <input class="form-control" name="admin_mname" type="text" placeholder="Middle Name">
+                  </div>
+                  <div class="form-group">
+                      <input class="form-control" name="username" type="text" placeholder="Email Address">
+                  </div>
+                  <div class="form-group">
+                      <input class="form-control" name="password" type="password" placeholder="Password" id="password-field" value="secret" >
+                      <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" ></span>
+  
+                  </div>
+                  <div class="form-group">
+                      <input class="form-control " name="confirmPass" type="password" placeholder="Confirm Password" id="password-field" value="secret">
+                      <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" ></span>
+                  </div>
+                  
+              </div>
+  
+          <div class="container container1" >
+              <label for="photo" width="100%" >Upload photo</label><br/>
+              <input type="file" name="newupload" id="newupload"/><br/>
+              <span id="admin_newupload_errorloc" class="error"></span>
+          </div>
+  
+          <div class="modal-footer ">
+              <button type="submit" name="saveAccount" class="btn btn-success" id="go" >Save Account</button>
+              <button type="button" class="btn btn-default" id= "cancel2" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Cancel</button>
+          </div>
+  </form>
+      </div>
     </div>
-  </div>
-  <!-- /.modal-content --> 
-  </div>
-  <!-- /.modal-dialog --> 
-</div>
+    <!-- /.modal-content --> 
+    </div>
+    <!-- /.modal-dialog --> 
 
     
 
