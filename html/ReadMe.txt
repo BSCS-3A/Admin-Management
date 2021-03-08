@@ -1,4 +1,4 @@
-Updates: <br>
+Updates:
 
-Add accounts <br>
+Add accounts
   - modified registration modal part for connection in database : added functionality codes
