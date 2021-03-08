@@ -1,18 +1,18 @@
 # Admin-Management
 yowyow
-File name: component_Feature_vN_M.fileextension
+File name: component_Feature_vN_M.fileextension <br>
 
-Components
-front - UI
-backFun - PHP
-backSec - trial error security
+Components <br>
+front - UI <br>
+backFun - PHP <br>
+backSec - trial error security <br>
 
-sub-Features
-adAccnts – Admin Accounts
-schedConfig – Election Scheduler
-signConfig – Signatory Configuration
-actLogs – Admin Activity Logs
+sub-Features <br>
+adAccnts – Admin Accounts <br>
+schedConfig – Election Scheduler <br>
+signConfig – Signatory Configuration <br>
+actLogs – Admin Activity Logs <br>
 
-Version Control
-vN – major
-M – Minor
+Version Control <br>
+vN – major <br>
+M – Minor <br>
