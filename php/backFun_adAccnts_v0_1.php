@@ -17,6 +17,9 @@ if(isset($_POST['saveAccount'])){
   if($query_run){
     echo '<script> alert("Data Saved"); </script>';
     header('Location: ../html/addAdmin.html');
+    //For Logs
+    $_SESSION['action'] = 'Added an Account for ' . $_POST['username'];
+    include 'backFun_adLogs.php';
   }
   else{
     echo '<script> alert("Data Not Saved"); </script>';
