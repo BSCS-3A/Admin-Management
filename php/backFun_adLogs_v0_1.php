@@ -13,7 +13,7 @@
 
 	$admin_id = $_SESSION["admin_id"]; // removes backslashes
 	$admin_id = mysqli_real_escape_string($conn, $admin_id); //escapes special characters in a string
-	$query = "INSERT INTO table_name (admin_id, activity_description, activity_date, activity_time)
+	$query = "INSERT INTO activity_log (admin_id, activity_description, activity_date, activity_time)
 			  values ('$admin_id', '$activity_description', '$activity_date', 'activity_time')";
 
 ?>
