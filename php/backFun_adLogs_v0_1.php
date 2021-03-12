@@ -1,5 +1,5 @@
 <?php
-	//Note set actions for every functionality i.e from every functionality file
+	//Note set actions for every functionality i.e from every functionality file add and update the code below this line
 	//$_SESSION['action'] = 'Added an Account' or 'Updated an Account' or 'Set and Sent Reminder' or 'Sent last Reminder' or 'Set Signatories' or 'Set Election Time and Date'
 
 	// Create connection
