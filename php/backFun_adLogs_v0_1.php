@@ -6,7 +6,7 @@
 	$connection = mysqli_connect("localhost","root","");
 	$db = mysqli_select_db($connection, 'buceils_db');
 
-	$activity_description = $_SESSION['action'];
+	$activity_description = $_SESSION["action"];
 	date_default_timezone_set("Asia/Manila");
 	$activity_date = date("Y.m.d");
 	$activity_time = time();
@@ -16,4 +16,6 @@
 	$query = "INSERT INTO activity_log (activity_date, activity_time, username, activity_description)
 			  values ('$activity_date', '$activity_time', '$username', '$activity_description')";
 
+	unset($_SESSION["username"]);
+	unset($_SESSION["actiom"]);
 ?>
