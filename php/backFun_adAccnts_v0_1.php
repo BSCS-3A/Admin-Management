@@ -4,6 +4,8 @@
 $connection = mysqli_connect("localhost","root","");
 $db = mysqli_select_db($connection, 'buceils_db');
 
+session_start();
+
 if(isset($_POST['saveAccount'])){
   $admin_lname = $_POST['admin_lname'];
   $admin_fname = $_POST['admin_fname'];
