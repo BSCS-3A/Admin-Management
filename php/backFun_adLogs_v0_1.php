@@ -17,5 +17,5 @@
 			  values ('$activity_date', '$activity_time', '$username', '$activity_description')";
 
 	unset($_SESSION["username"]);
-	unset($_SESSION["actiom"]);
+	unset($_SESSION["action"]);
 ?>
