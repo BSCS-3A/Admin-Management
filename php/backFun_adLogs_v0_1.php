@@ -6,18 +6,15 @@
 	$connection = mysqli_connect("localhost","root","");
 	$db = mysqli_select_db($connection, 'buceils_db');
 
-	$activity_description = $_SESSION["action"];
-	date_default_timezone_set("Asia/Manila");
-	$activity_date = date("Y.m.d");
-	$activity_time = time();
-
-	$username = $_SESSION["username"]; // removes backslashes
-	$admin_id = mysqli_real_escape_string($connection, $admin_id); //escapes special characters in a string
-	$query = "INSERT INTO activity_log (activity_date, activity_time, username, activity_description)
-			  values ('$activity_date', '$activity_time', '$username', '$activity_description')";
-	
-	mysqli_query($connection, $query);
-
-	unset($_SESSION["username"]);
+	$activity_description = $_SESSION['action'];
 	unset($_SESSION["action"]);
+
+	$admin_id = stripslashes($_SESSION["admin_id"]); // removes backslashes
+	unset($_SESSION["username"]);
+
+	$admin_id =  mysqli_real_escape_string($connection, $admin_id); //escapes special characters in a string
+	$query = "INSERT INTO activity_log (admin_id, activity_description)
+			  values ('$admin_id', '$activity_description')";
+
+	mysqli_query($connection, $query);
 ?>
