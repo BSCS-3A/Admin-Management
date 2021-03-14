@@ -12,9 +12,11 @@
 	$activity_time = time();
 
 	$username = $_SESSION["username"]; // removes backslashes
-	$admin_id = mysqli_real_escape_string($conn, $admin_id); //escapes special characters in a string
+	$admin_id = mysqli_real_escape_string($connection, $admin_id); //escapes special characters in a string
 	$query = "INSERT INTO activity_log (activity_date, activity_time, username, activity_description)
 			  values ('$activity_date', '$activity_time', '$username', '$activity_description')";
+	
+	mysqli_query($connection, $query);
 
 	unset($_SESSION["username"]);
 	unset($_SESSION["action"]);
