@@ -1,0 +1,111 @@
+body {
+    font-size: 19px;
+}
+table{
+    width: 50%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    text-align: left;
+}
+tr {
+    border-bottom: 1px solid #cbcbcb;
+}
+th, td{
+    border: none;
+    height: 30px;
+    padding: 2px;
+}
+tr:hover {
+    background: #F5F5F5;
+}
+
+form {
+    width: 40%;
+    margin: 50px auto;
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+    background-color: #124254;
+    margin-right: 75px;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+
+body, input {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 3rem;
+  display: block;
+  padding: 2rem 3rem;
+}
+
+.input-group {
+    margin: 10px 0px 10px 0px;
+}
+.input-group label {
+    display: block;
+    text-align: left;
+    margin: 3px;
+    color:#ffc423;
+    font-size: 25px;
+}
+.input-group input {
+    height: 30px;
+    width: 93%;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.btn {
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    background: #828686;
+    border: none;
+    border-radius: 5px;
+
+}
+.msg {
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 5px;
+    color: #3c763d;
+    background: #dff0d8;
+    border: 1px solid #3c763d;
+    width: 50%;
+    text-align: center;
+}
+form.isog{
+    color: #333;
+    background-color: transparent;
+    float: left;
+    text-align: left;
+    margin-left: 100px;
+    margin:25px 70px 80px;
+    position: relative;
+    width: 500px;
+    border: transparent;
+}
+
+.leftdiv
+{
+float: left;
+width: 50%;
+}
+.rightdiv
+{
+float: left;
+width: 50%;
+}
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+    font-size: 20px;
+}
+
+input,
+label {
+    margin: .4rem 0;
+}
