@@ -9,12 +9,12 @@
 	$activity_description = $_SESSION['action'];
 	unset($_SESSION["action"]);
 
-	$admin_id = stripslashes($_SESSION["admin_id"]); // removes backslashes
+	$username = stripslashes($_SESSION["username"]); // removes backslashes
 	unset($_SESSION["username"]);
 
-	$admin_id =  mysqli_real_escape_string($connection, $admin_id); //escapes special characters in a string
-	$query = "INSERT INTO activity_log (admin_id, activity_description)
-			  values ('$admin_id', '$activity_description')";
+	$admin_id =  mysqli_real_escape_string($connection, $username); //escapes special characters in a string
+	$query = "INSERT INTO activity_log (username, activity_description)
+			  values ('$username', '$activity_description')";
 
 	mysqli_query($connection, $query);
 ?>
