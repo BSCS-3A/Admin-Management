@@ -8,4 +8,4 @@
   - adding account logs can now be recorded in the database
  
  *added backFun_schedConfig_v0_1.php
-  - sending reminders function is working in my device (stibs) 
+  - sending student reminders function is working in my device (stibs) 
