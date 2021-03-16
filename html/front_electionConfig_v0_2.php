@@ -117,7 +117,7 @@
 
 </form>
 
-<form method="post" action="backup.php" >
+<form method="post" action="backFun_schedConfig_v0_1.php" >
 		<div class="input-group">
 			<label>Vote Reminders:</label>
             <textarea rows="15" cols="68" name="message"></textarea>
