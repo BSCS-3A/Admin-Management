@@ -20,7 +20,7 @@ if(isset($_POST['saveAccount'])){
     echo '<script> alert("Data Saved"); </script>';
     header('Location: ../html/addAdmin.html');
     //For Logs
-    $_SESSION['action'] = 'Added an Account for ' . $_POST['username'];
+    $_SESSION['action'] = 'created Admin Account : ' . $_POST['username'];
     include 'backFun_adLogs.php';
   }
   else{
