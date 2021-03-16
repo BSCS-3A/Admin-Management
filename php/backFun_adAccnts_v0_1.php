@@ -17,11 +17,12 @@ if(isset($_POST['saveAccount'])){
   $query_run = mysqli_query($connection, $query);
 
   if($query_run){
-    echo '<script> alert("Data Saved"); </script>';
-    header('Location: ../html/addAdmin.html');
     //For Logs
     $_SESSION['action'] = 'created Admin Account : ' . $_POST['username'];
-    include 'backFun_adLogs.php';
+    include 'backFun_actLogs_v0_1.php';
+    
+    echo '<script> alert("Data Saved"); </script>';
+    header('Location: ../html/addAdmin.html');
   }
   else{
     echo '<script> alert("Data Not Saved"); </script>';
