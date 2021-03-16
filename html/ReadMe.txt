@@ -5,3 +5,6 @@ Add accounts
 
 Election Schedule
  - added some functionality codes
+ 
+ Activity Logs
+ - can display logs from adding account(kerbae, 2021)
