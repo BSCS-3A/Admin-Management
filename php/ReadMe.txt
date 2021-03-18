@@ -12,3 +12,6 @@
   
  *added backFun_adAccnts_v0_2.php
   - photo can now be saved in database
+
+*edited backFun_adAcctns_v0_2.php
+- adding account logs can now be recorded in the database(2.0)
