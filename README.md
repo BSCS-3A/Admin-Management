@@ -1,5 +1,4 @@
 # Admin-Management
-yowyow
 File name: component_Feature_vN_M.fileextension <br>
 
 Components <br>
