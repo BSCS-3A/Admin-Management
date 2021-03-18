@@ -39,6 +39,11 @@ if(isset($_POST['saveAccount']) && isset($_FILES['my_image'])){
         $query = "INSERT INTO admin_table (`admin_lname`, `admin_fname`, `admin_mname`, `username`, `password`, `photo`) 
           VALUES('$admin_lname', '$admin_fname', '$admin_mname', '$username', '$password', '$new_img_name')";
 				mysqli_query($connection, $query);
+	      
+	      			//For Logs
+				$_SESSION['action'] = 'created Admin Account : ' . $_POST['username'];
+				include 'backFun_actLogs_v0_1.php';
+	      			
 				header("Location: ../html/addAdmin.php");
       }else{
         $em = "You can't upload files of this type";
