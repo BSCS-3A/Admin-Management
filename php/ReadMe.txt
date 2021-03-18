@@ -9,3 +9,6 @@
  
  *added backFun_schedConfig_v0_1.php
   - sending student reminders function is working in my device (stibs) 
+  
+ *added backFun_adAccnts_v0_2.php
+  - photo can now be saved in database
