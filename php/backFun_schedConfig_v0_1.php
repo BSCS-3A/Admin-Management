@@ -72,7 +72,7 @@ $mail = new PHPMailer(TRUE);
 	
     //For Logs
     $_SESSION['action'] = 'sent Election Reminders.';
-    include 'backFun_adLogs.php';
+    include 'backFun_actLogs_v0_1.php';
        
    }else{
       function_alert("Sending failed"); 
