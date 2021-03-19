@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `activity_log` (
   `activity_log_id` int(11) NOT NULL,
-  `admin_id` int(11) NOT NULL,
+  `username` varchar(30) NOT NULL,
   `activity_description` varchar(150) NOT NULL,
   `activity_time_&_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
