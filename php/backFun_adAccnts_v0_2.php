@@ -4,7 +4,8 @@
 $connection = mysqli_connect("localhost","root","");
 $db = mysqli_select_db($connection, 'buceils_db');
 
-//session_start();
+//For Logs
+session_start();
 
 if(isset($_POST['saveAccount']) && isset($_FILES['my_image'])){
   
