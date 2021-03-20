@@ -33,12 +33,19 @@ form {
 
 }
 
-#Scheduler {
-  font-family: 'PT Sans', sans-serif;
-  font-size: 3rem;
-  display: block;
-  padding: 0rem 2rem;
-}
+ input[type="date"] {
+   font-family: 'PT Sans', sans-serif;
+   font-size: 3rem;
+   display: block;
+   padding: 0rem 2rem;
+  }
+
+  input[type="time"] {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 3rem;
+    display: block;
+    padding: 0rem 2rem;
+   }
 
 .input-group {
     margin: 10px 0px 10px 0px;
