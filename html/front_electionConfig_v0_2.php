@@ -97,27 +97,28 @@
         <div>
             <label for="date">DATE:</label>
 
-        <input id="Scheduler" type="date" value="yyyy-mm-dd"/></input>
+        <input type="date" id="date" name="date" value="yyyy-mm-dd"></input>
         </div>
         <br>
 
         <div>
             <label for="tstart">Time Starts:</label>
-            <input id="Scheduler" type="time"></input>
+            <input type="time" id="tstart" name="tstart"></input>
         </div>
         <br>
         <div>
             <label for="tends">Time Ends:</label>
-            <input id="Scheduler" type="time"></input>
+            <input type="time" id="tends" name="tends"></input>
             <br>
-            <button class="btn" type="submit" name="savesched" >SAVE</button>
+            <script type="text/javascript" src="../assets/js/countdown.js"></script>
+            <button class="btn" type="submit" id="btnsave" onclick="passvalues();" name="savesched" >SAVE</button><!-- onclick="myFunction('date','tstart','tends')-->
             <button class="btn" type="submit" name="editsched" >EDIT</button>
         </div>
     </div>
 
 </form>
 
-<form method="post" action="backFun_schedConfig_v0_1.php" >
+<form method="post" action="../backFun_schedConfig_v0_1.php" >
 		<div class="input-group">
 			<label>Vote Reminders:</label>
             <textarea rows="15" cols="68" name="message"></textarea>
