@@ -13,6 +13,10 @@
 				$query_run = mysqli_query($connection, $query);
                 
                 if ($query_run) {
+ 		//For Logs
+		$_SESSION['action'] = 'deleted Admin Account : ' . $admin_id;
+		include 'backFun_actLogs_v0_1.php';
+			
                     echo '<script type="text/javascript"> alert("Data Deleted"); </script>';
                     header("Location: ../html/addAdmin.php");
                 }
