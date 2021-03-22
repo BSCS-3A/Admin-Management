@@ -21,7 +21,8 @@ if (isset($_POST['updateData'])) {
     //CHECK DATA UPDATED OR NOT
     if ($query_run) {
          //For Logs
-        $_SESSION['action'] = 'updated Admin Account : ' . $user_id;
+        $username = "SELECT username FROM admin_table WHERE admin_id='$admin_id'";
+        $_SESSION['action'] = 'updated Admin Account : ' . $username;
         include 'backFun_actLogs_v0_1.php';
         
         echo "<script>
