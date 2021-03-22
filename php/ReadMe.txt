@@ -16,8 +16,8 @@
 *edited backFun_adAcctns_v0_2.php
 - adding account logs can now be recorded in the database(2.0)
 
-*added backFun_delAcctns_v0_1.php
+*added backFun_delAccnts_v0_1.php
 - delete accounts functionality working
 
-*added backFun_editAcctns_v0_1.php
+*added backFun_editAccnts_v0_1.php
 - edit accounts functionality working
