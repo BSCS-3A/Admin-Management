@@ -41,7 +41,7 @@ if(isset($_POST['saveAccount']) && isset($_FILES['my_image'])){
           VALUES('$admin_lname', '$admin_fname', '$admin_mname', '$username', '$password', '$new_img_name')";
 				mysqli_query($connection, $query);
 	      
-	      			//For Logs
+	      //For Logs
 				$_SESSION['action'] = 'created Admin Account : ' . $_POST['username'];
 				include 'backFun_actLogs_v0_1.php';
 	      			
@@ -55,77 +55,5 @@ if(isset($_POST['saveAccount']) && isset($_FILES['my_image'])){
     $em - "unknown error occured!";
     header("Location: ../html/addAdmin.php?error=$em");
   }
-/*
-  $query = "INSERT INTO admin_table (`admin_lname`, `admin_fname`, `admin_mname`, `username`, `password`) VALUES ('$admin_lname', '$admin_fname', '$admin_mname', '$username', '$password')";
-  $query_run = mysqli_query($connection, $query);
-
-  if($query_run){
-    echo '<script> alert("Data Saved"); </script>';
-    header('Location: ../html/addAdmin.php');
-    //For Logs
-    $_SESSION['action'] = 'Added an Account for ' . $_POST['username'];
-    include 'backFun_adLogs.php';
-  }
-  else{
-    echo '<script> alert("Data Not Saved"); </script>';
-  }
-*/
 }
-
-/*
-if(isset($_POST['saveAccount'])){
-  $id = $_POST['admin_id'];
-
-  $query = "UPDATE INTO `admin_table` SET admin_lname='$_POST[admin_lname]',admin_fname='$_POST[admin_fname]',admin_mname='$_POST[admin_mname]',username='$_POST[username]',password='$_POST[password]') where id='$_POST[admin_id]'";
-  $query_run = mysqli_query($connection, $query);
-
-  if($query_run){
-    echo '<script type="text/javascript"> alert("Data Updated"); </script>';
-    header('Location: ../html/addAdmin.php');
-  }
-  else{
-    echo '<script type="text/javascript"> alert("Data Not Updated"); </script>';
-  }
-}
-
-
-if(isset($_GET['admin_id']) && is_numeric($_GET['admin_id'])){
-    
-  $userid = $_GET['admin_id'];
-  $get_user = mysqli_query($conn,"SELECT * FROM `admin_table` WHERE id='$userid'");
-  
-  if(mysqli_num_rows($get_user) === 1){
-      
-      $row = mysqli_fetch_assoc($get_user);
-
-  }
-}
-
-if(isset($_POST['updateData'])){
-
-  $admin_lname = $_POST['admin_lname'];
-  $admin_fname = $_POST['admin_fname'];
-  $admin_mname = $_POST['admin_mname'];
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-
-      $user_id = $_GET['admin_id'];
-      // UPDATE USER DATA               
-      $update_query = mysqli_query($connection,"UPDATE `admin_table` SET admin_lname='$admin_lname', admin_fname='$admin_fname', admin_mname='$admin_mname', username='$username', password='$password' WHERE id=$user_id");
-
-      //CHECK DATA UPDATED OR NOT
-      if($update_query){
-          echo "<script>
-          alert('Data Updated');
-          window.location.href = '../html/addAdmin.php';
-          </script>";
-          exit;
-      }else{
-          echo "<h3>Oops something wrong!</h3>";
-      }
-
-  
-
-}
-*/
 ?>

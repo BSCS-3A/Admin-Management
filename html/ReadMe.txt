@@ -1,13 +1,13 @@
 Updates:
 
 Add accounts
-  - modified registration modal part for connection in database : added functionality codes
+- modified registration modal part for connection in database : added functionality codes
 
 Election Schedule
- - added some functionality codes
+- added some functionality codes
  
- Activity Logs
- - now able to display logs from adding account(kerbae, 2021)
+Activity Logs
+- now able to display logs from adding account(kerbae, 2021)
 
 Add accounts (front_addAdmin_v0_2)
 - photo can now be saved in database
@@ -17,3 +17,7 @@ Add accounts (front_addAdmin_v0_2)
 Election schedule
 - date and time countdown can now set
 - minor fixes in UI
+
+Add accounts
+*added front_adAcctns_v1_0.php
+- modified for edit and delete functionalities
