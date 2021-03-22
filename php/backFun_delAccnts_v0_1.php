@@ -14,7 +14,8 @@
                 
                 if ($query_run) {
  		//For Logs
-		$_SESSION['action'] = 'deleted Admin Account : ' . $admin_id;
+		$username = "SELECT username FROM admin_table WHERE admin_id='$admin_id'";
+		$_SESSION['action'] = 'deleted Admin Account : ' . $username;
 		include 'backFun_actLogs_v0_1.php';
 			
                     echo '<script type="text/javascript"> alert("Data Deleted"); </script>';
