@@ -21,3 +21,6 @@
 
 *added backFun_editAccnts_v0_1.php
 - edit accounts functionality working
+
+*edited backFun_delAccnts_v0_1.php and backFun_editAccnts_v0_1.php
+-deleting and editing logs can now be recorded in the database
