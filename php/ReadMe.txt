@@ -25,5 +25,5 @@
 *edited backFun_delAccnts_v0_1.php and backFun_editAccnts_v0_1.php
 -deleting and editing logs can now be recorded in the database
 
-*edited backFun_delAccnts_v0_1.php and backFun_editAccnts_v0_1.php
+*edited backFun_adAccnts_v0_2.php and backFun_editAccnts_v0_1.php
 -modified for newly added columns in database
