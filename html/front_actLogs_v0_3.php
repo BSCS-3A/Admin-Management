@@ -213,18 +213,22 @@
         <p class="footer-txt">BS COMPUTER SCIENCE 3A © 2021</p>
     </div>
 
-    <script>$(document).ready(function() 
-     {
-        $('.icon').click(function () 
-        {
-          $('span').toggleClass("cancel");
-        } );
-        $('#datatable').DataTable( 
-        {
-          "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
-        } );
-        $("[data-toggle=tooltip]").tooltip();
-    } );
+     <script>
+        $('.icon').click(function() {
+            $('span').toggleClass("cancel");
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#datatable').DataTable({
+                "lengthMenu": [
+                    [10, 25, 50, -1],
+                    [10, 25, 50, "All"]
+                ]
+            });
+            $("[data-toggle=tooltip]").tooltip();
+        });
     </script>
 </body>
 
