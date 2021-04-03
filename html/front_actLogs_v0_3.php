@@ -214,18 +214,17 @@
     </div>
 
      <script>
-        $('.icon').click(function() {
+        $('.icon').click(function() 
+        {
             $('span').toggleClass("cancel");
         });
     </script>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function() 
+        {
             $('#datatable').DataTable({
-                "lengthMenu": [
-                    [10, 25, 50, -1],
-                    [10, 25, 50, "All"]
-                ]
+                "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ]
             });
             $("[data-toggle=tooltip]").tooltip();
         });
