@@ -21,3 +21,6 @@ Election schedule
 Add accounts
 *added front_adAcctns_v1_0.php
 - modified for edit and delete functionalities
+
+Activity Logs
+- can now be sorted from previous to latest activities and filtered using the activity description
