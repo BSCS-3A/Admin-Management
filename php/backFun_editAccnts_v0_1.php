@@ -11,25 +11,23 @@ if (isset($_POST['updateData'])) {
     $admin_fname = $_POST['admin_fname'];
     $admin_mname = $_POST['admin_mname'];
     $username = $_POST['username'];
+    $admin_position = $_POST['admin_position'];
+    $comelec_position = $_POST['comelec_position'];
     $password = $_POST['password'];
 
     $user_id = $_POST['update_id'];
     // UPDATE USER DATA               
-    $query = "UPDATE `admin_table` SET admin_lname='$admin_lname', admin_fname='$admin_fname', admin_mname='$admin_mname', username='$username', password='$password' 
-            WHERE admin_id='$user_id' ";
+    $query = "UPDATE `admin_table` SET admin_lname='$admin_lname', admin_fname='$admin_fname', admin_mname='$admin_mname', username='$username', 
+                admin_position='$admin_position', comelec_position='$comelec_position' , password='$password' 
+                WHERE admin_id='$user_id' ";
     $query_run = mysqli_query($connection, $query);
     //CHECK DATA UPDATED OR NOT
     if ($query_run) {
-         //For Logs
-        $username = "SELECT username FROM admin_table WHERE admin_id='$admin_id'";
-        $_SESSION['action'] = 'updated Admin Account : ' . $username;
-        include 'backFun_actLogs_v0_1.php';
-        
+        header("Refresh: 0; ../html/addAdmin.php");
         echo "<script>
           alert('Data Updated');
-          window.location.href = '../html/addAdmin.php';
           </script>";
-        exit;
+        die;
     } else {
         echo "<h3>Oops something wrong!</h3>";
     }
