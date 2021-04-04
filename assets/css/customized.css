@@ -1,0 +1,15 @@
+table {
+  counter-reset: row-num;
+ }
+
+ table tbody tr  {
+ counter-increment: row-num;
+ }
+ 
+ table tr td:first-child::before {
+ content: counter(row-num) ". ";
+ }
+ 
+ table tr td:first-child {
+ text-align: center;
+ }
