@@ -28,3 +28,7 @@ Activity Logs
 Admin accounts
 *added front_adAcctns_v2.php
 - modified for newly added columns in database (comelec_position and admin_position)
+
+Election Schedule
+- minor changes in UI
+- removed countdown.js
