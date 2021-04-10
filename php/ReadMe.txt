@@ -27,3 +27,6 @@
 
 *edited backFun_adAccnts_v0_2.php and backFun_editAccnts_v0_1.php
 -modified for newly added columns in database
+
+*added backFun_setcountdown_v0_1.php
+-slight bugs in alerting message after clicking the save/edit buttons
