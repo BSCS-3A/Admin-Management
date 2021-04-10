@@ -91,11 +91,11 @@
     <div class="header" id="myHeader">
        <h1>Time Scheduler</h1>
     </div>
-    <form class="isog" method="POST" action="#">
+    <form class="isog" method="POST" action="../php/backFun_setcountdown_v0_1.php">
     <div class="leftdiv">
-        <br><br>
+       <br>
         <div>
-            <label for="date">DATE:</label>
+            <label for="date">Date Start:</label>
 
         <input type="date" id="date" name="date" value="yyyy-mm-dd"></input>
         </div>
@@ -107,11 +107,19 @@
         </div>
         <br>
         <div>
+            <label for="date">Date Ends:</label>
+
+        <input type="date" id="date" name="dateEnd" value="yyyy-mm-dd"></input>
+        </div>
+        <br>
+        <div>
             <label for="tends">Time Ends:</label>
             <input type="time" id="tends" name="tends"></input>
-            <br>
-            <script type="text/javascript" src="../assets/js/countdown.js"></script>
-            <button class="btn" type="submit" id="btnsave" onclick="passvalues();" name="savesched" >SAVE</button><!-- onclick="myFunction('date','tstart','tends')-->
+        </div>
+        <br>
+        <div>
+           <!-- <script type="text/javascript" src="../assets/js/awaw.js"></script>onclick="passvalues();"-->
+            <button class="btn" type="submit" id="btnsave" name="savesched" >SAVE</button><!-- onclick="myFunction('date','tstart','tends')-->
             <button class="btn" type="submit" name="editsched" >EDIT</button>
         </div>
     </div>
