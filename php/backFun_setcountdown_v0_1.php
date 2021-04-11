@@ -18,12 +18,18 @@ function function_alert($msg) {
       $tstart= $_POST['tstart'];
       $tends= $_POST['tends'];
 
+      if(($date == "") || ($tstart == "") || ($dateEnd == "") || ($tends == "")){
+         
+         function_alert("there is an empty field");
+      }else{
+
       
-            //updating the table
+            //SET TIMEFRAME
       $vtevent = "INSERT INTO vote_event (`start_date`,`end_date`) 
       VALUES('$date $tstart', '$dateEnd $tends')";
     mysqli_query($db, $vtevent);
-    function_alert("saved"); 
+    function_alert("saved");
+      } 
 
    }else{
       function_alert("failed"); 
@@ -42,11 +48,10 @@ if (isset($_POST['editsched'])) {
     //updating the table
     $edit =  "UPDATE `vote_event` SET start_date='$date $tstart', end_date='$dateEnd $tends ' WHERE vote_event_id = 1";
   mysqli_query($db, $edit);
-  function_alert("saved"); 
+  function_alert("updating successful"); 
 
  }else{
-    function_alert("failed"); 
- }
+    function_alert("updating 
 
 
 
