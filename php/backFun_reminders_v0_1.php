@@ -18,7 +18,7 @@ $mail = new PHPMailer(TRUE);
       $mail->setFrom('buceilshighschool@gmail.com', 'BUCEILS');
       $mail->addAddress($row['email']);
       $mail->Subject = 'BUCEILS ELECTION SCHEDULE';
-      $mail->Body = 'Reminders';
+      $mail->Body = 'Reminders'; //pa edit na lang nung dapat na nakasulat
       
       /* SMTP parameters. */
       $mail->isSMTP();
