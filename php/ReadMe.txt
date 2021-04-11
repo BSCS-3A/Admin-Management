@@ -33,3 +33,6 @@
 
 *added backFun_reminders_v0_1.php
 - sending of emails 1 hour before the election ends to those student that not yet voted is now working.
+
+*added backFun_reminders_v0_1.php
+- all data in vote_event will be deleted after the election ends.
