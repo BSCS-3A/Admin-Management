@@ -19,16 +19,22 @@ $mail = new PHPMailer(TRUE);
       echo "<script>alert('$msg');</script>"; 
   } 
 
-  //Send email
+ //Send email
 	if (isset($_POST['save'])) {
+
 		/* $subject = $_POST['subject']; */
-		$message = $_POST['message'];
+	$message = $_POST['message'];
+      	if(empty($message)){
+         function_alert("blank message"); 
+      	}else{
+
+
       while ($row = mysqli_fetch_array($results)) { 
 
-		try {
+	try {
    
          $mail->setFrom('buceilshighschool@gmail.com', 'BUCEILS');
-         $mail->addAddress($row['email']);
+         $mail->addAddress($row['bumail']);
          $mail->Subject = 'BUCEILS ELECTION SCHEDULE';
          $mail->Body = $message;
          
@@ -72,9 +78,11 @@ $mail = new PHPMailer(TRUE);
 	
     //For Logs
     $_SESSION['action'] = 'sent Election Reminders.';
-    include 'backFun_actLogs_v0_1.php';
+    include 'backFun_adLogs.php';
        
+   }
    }else{
       function_alert("Sending failed"); 
+	
    }
-
+?>
