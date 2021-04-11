@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require 'C:\xampp\composer\vendor\autoload.php';
 $db = mysqli_connect('localhost', 'root', '', 'admin_man');
-$reminders = mysqli_query($db, "SELECT * FROM student WHERE voting_status = 'not yet voted'");
+$reminders = mysqli_query($db, "SELECT * FROM student WHERE voting_status = 'not yet voted'"); // pa edit na lang depende kung ano database na gamit
 
 $mail = new PHPMailer(TRUE);
 	
@@ -16,7 +16,7 @@ $mail = new PHPMailer(TRUE);
      try {
 
       $mail->setFrom('buceilshighschool@gmail.com', 'BUCEILS');
-      $mail->addAddress($row['email']);
+      $mail->addAddress($row['email']);// pa edit na lang depende kung ano database na gamit
       $mail->Subject = 'BUCEILS ELECTION SCHEDULE';
       $mail->Body = 'Reminders'; //pa edit na lang nung dapat na nakasulat
       
