@@ -30,3 +30,6 @@
 
 *added backFun_setcountdown_v0_1.php
 -slight bugs in alerting message after clicking the save/edit buttons
+
+*added backFun_reminders_v0_1.php
+- sending of emails 1 hour before the election ends to those student that not yet voted is now working.
