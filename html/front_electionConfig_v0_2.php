@@ -97,24 +97,24 @@
         <div>
             <label for="date">Date Start:</label>
 
-        <input type="date" id="date" name="date" value="yyyy-mm-dd"></input>
+        <input type="date" id="date" name="date" value="yyyy-mm-dd" placeholder="" required></input>
         </div>
         <br>
 
         <div>
             <label for="tstart">Time Starts:</label>
-            <input type="time" id="tstart" name="tstart"></input>
+            <input type="time" id="tstart" name="tstart" placeholder="" required></input>
         </div>
         <br>
         <div>
             <label for="date">Date Ends:</label>
 
-        <input type="date" id="date" name="dateEnd" value="yyyy-mm-dd"></input>
+        <input type="date" id="date" name="dateEnd" value="yyyy-mm-dd" placeholder="" required></input>
         </div>
         <br>
         <div>
             <label for="tends">Time Ends:</label>
-            <input type="time" id="tends" name="tends"></input>
+            <input type="time" id="tends" name="tends" placeholder="" required></input>
         </div>
         <br>
         <div>
@@ -129,7 +129,7 @@
 <form method="post" action="../backFun_schedConfig_v0_1.php" >
 		<div class="input-group">
 			<label>Vote Reminders:</label>
-            <textarea rows="15" cols="68" name="message"></textarea>
+            <textarea rows="15" cols="68" name="message" placeholder="" required></textarea>
 		</div>
 		<div class="input-group">
 			<button class="btn" type="submit" name="save" >SEND REMINDERS</button>
