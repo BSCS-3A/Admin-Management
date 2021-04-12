@@ -18,21 +18,14 @@ function function_alert($msg) {
       $tstart= $_POST['tstart'];
       $tends= $_POST['tends'];
 
-      if(($date == "") || ($tstart == "") || ($dateEnd == "") || ($tends == "")){
-         
-         function_alert("there is an empty field");
-      }else{
-
-      
+  
             //SET TIMEFRAME
       $vtevent = "INSERT INTO vote_event (`start_date`,`end_date`) 
       VALUES('$date $tstart', '$dateEnd $tends')";
     mysqli_query($db, $vtevent);
     function_alert("saved");
-      } 
+      
 
-   }else{
-      function_alert("failed"); 
    }
 
 
@@ -50,9 +43,6 @@ if (isset($_POST['editsched'])) {
   mysqli_query($db, $edit);
   function_alert("updating successful"); 
 
- }else{
-    function_alert("updating 
-
-
+ }
 
    ?>
