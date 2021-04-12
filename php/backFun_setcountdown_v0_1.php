@@ -12,9 +12,7 @@ function function_alert($msg) {
 
 $res = mysqli_query($db, "SELECT * FROM vote_event");
 while ($row = mysqli_fetch_array($res)) { 
-$temp = $row['bumail'];
 $count += 1;
-
 }
 
 //set timeframe
