@@ -120,7 +120,7 @@
         <div>
            <!-- <script type="text/javascript" src="../assets/js/awaw.js"></script>onclick="passvalues();"-->
             <button class="btn" type="submit" id="btnsave" name="savesched" >SAVE</button><!-- onclick="myFunction('date','tstart','tends')-->
-            <button class="btn" type="submit" name="editsched" >EDIT</button>
+            <button class="btn" type="submit" name="editsched" >UPDATE</button>
         </div>
     </div>
 
