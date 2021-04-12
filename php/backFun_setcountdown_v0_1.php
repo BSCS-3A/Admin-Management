@@ -10,7 +10,15 @@ function function_alert($msg) {
     echo "<script>alert('$msg');</script>"; 
 } 
 
+$res = mysqli_query($db, "SELECT * FROM vote_event");
+while ($row = mysqli_fetch_array($res)) { 
+$temp = $row['bumail'];
+$count += 1;
+
+}
+
 //set timeframe
+if($count == 1){
    if (isset($_POST['savesched'])) {
 
       $date=$_POST['date'];
@@ -22,11 +30,14 @@ function function_alert($msg) {
             //SET TIMEFRAME
       $vtevent = "INSERT INTO vote_event (`start_date`,`end_date`) 
       VALUES('$date $tstart', '$dateEnd $tends')";
-    mysqli_query($db, $vtevent);
-    function_alert("saved");
+      mysqli_query($db, $vtevent);
+      function_alert("saved");
       
-
+       }
+   }else{
+      function_alert("Timeframe is already set");
    }
+      
 
 
    //edit timeframe
