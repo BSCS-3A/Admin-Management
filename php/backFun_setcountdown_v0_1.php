@@ -10,6 +10,7 @@ function function_alert($msg) {
     echo "<script>alert('$msg');</script>"; 
 } 
 
+$count = 0;
 $res = mysqli_query($db, "SELECT * FROM vote_event");
 while ($row = mysqli_fetch_array($res)) { 
 $count += 1;
