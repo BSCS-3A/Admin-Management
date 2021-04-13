@@ -39,3 +39,6 @@
 
 *edited backFun_setcountdown_v0_1.php
 - removed save function
+
+*deleted backFun_resetDBtable_v0_1.php
+-truncating table vote_event is transfered to backFun_setcountdown_v0_1.php 
