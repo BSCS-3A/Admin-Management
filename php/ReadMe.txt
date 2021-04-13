@@ -36,3 +36,6 @@
 
 *added backFun_resetDBtable_v0_1.php
 - all data in vote_event will be deleted after the election ends.
+
+*edited backFun_setcountdown_v0_1.php
+- removed save function
