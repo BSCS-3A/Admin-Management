@@ -109,10 +109,10 @@
       <table class= "center" id="datatable" width="100%" cellspacing="0" cellpadding="2px">
                           <thead>
                               <tr>
-                                <th class="text-center">NO.</th>
-                                  <th class="text-center">NAMES</th>
-                                  <th class="text-center">POSITION</th>
-                                  <th class="text-center">ACTION</th>
+                                <th style="display:none;"></th>
+                                <th class="text-center">NAMES</th>
+                                <th class="text-center">POSITION</th>
+                                <th class="text-center">ACTION</th>
 
                               </tr>
                           </thead>
@@ -123,12 +123,12 @@
                           ?>
                           <tbody>
                               <tr>
-                                <td><?php echo $row['id']; ?></td>
+                                <td style="display:none;"><?php echo $row['id']; ?></td>
                                 <td><?php echo $row['signame']; ?></td>
                                 <td><?php echo $row['sigpos']; ?></td>
                                 <td style="white-space: nowrap;">
-                                    <button class="btn btn-primary btn-xs" data-title="Edit" name="editinfo" data-toggle="modal" data-target="#edit" data-placement="top" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-pencil"></span> EDIT</button>
-                                    <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="fa fa-trash"></span> DELETE</button>
+                                    <button class="btn btn-primary btn-xs editbtn" data-title="Edit" name="editinfo" data-toggle="modal" data-target="#edit" data-placement="top" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-pencil"></span> EDIT</button>
+                                    <button class="btn btn-danger btn-xs deletebtn" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="fa fa-trash"></span> DELETE</button>
                                 </td>
                           </tbody>
                           <?php
@@ -159,10 +159,10 @@
 <form action="../php/backFun_adSig_v0_1.php" method="POST">
       <div class="modal-body">
                 <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Name" name="signame" id="signame">
+                    <input class="form-control" type="text" placeholder="Name" required name="signame" id="signame">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Position" name="sigpos" id="sigpos">
+                    <input class="form-control" type="text" placeholder="Position" required name="sigpos" id="sigpos">
                 </div>
 
 
@@ -185,27 +185,29 @@
 </div>
 
 
-
+      <form action="../php/backFun_editSig_v0_1.php" method="POST">
       <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
             <div class="modal-dialog">
           <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title custom_align" id="Heading">Edit Admin Information</h4>
+                    <h4 class="modal-title custom_align" id="Heading">Edit Signatory Information</h4>
                 </div>
+                <input type="hidden" name="update_id" id="update_id">
                 <div class="modal-body">
                 <div class="form-group">
-                    <input class="form-control " type="text" placeholder="Name">
+                    <input class="form-control" name="signame"type="text" placeholder="Full Name" required>
                 </div>
                 <div class="form-group">
-                    <input class="form-control " type="text" placeholder="Position">
+                    <input class="form-control" name="sigpos" type="text" placeholder="Position" required>
                 </div>
 
             </div>
                 <div class="modal-footer ">
-                    <button type="button" class="btn btn-warning btn-lg" id="save" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update Account</button>
+                    <button type="submit" class="btn btn-warning btn-lg" id="save" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update Account</button>
 
                 </div>
+            </form>
             </div>
           <!-- /.modal-content -->
         </div>
@@ -220,11 +222,11 @@
                     <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
           </div>
                 <div class="modal-body">
-                  <form action="../php/delete.php" method="POST">
+                  <form action="../php/backFun_delSig_v0_1.php" method="POST">
                   <input type="hidden" name="Delete_ID"id="Delete_ID">
-                <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this account?</div>
+                <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this signatory?</div>
               <div class="modal-footer ">
-              <button type="button" class="btn btn-success" name="yes"id="continue"><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+              <button type="submit" class="btn btn-success" name="yes"id="continue"><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
               <button type="button" class="btn btn-default" id= "no" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
             </div>
             </div>
@@ -283,8 +285,25 @@
 
                 console.log(data);
 
-                $('#Delete_ID').val(data[1]);
+                $('#Delete_ID').val(data[0]);
 
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('.editbtn').on('click', function() {
+
+                $tr = $(this).closest('tr');
+
+                var data = $tr.children("td").map(function() {
+                    return $(this).text();
+                }).get();
+
+                console.log(data);
+
+                $('#update_id').val(data[0]);
             });
         });
     </script>
