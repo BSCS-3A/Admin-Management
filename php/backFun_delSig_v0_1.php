@@ -11,7 +11,6 @@ $query = mysqli_query($connection, $delete);
 
 if($query){
 echo "Signatory Deleted Successfully";
-echo $id;
 }
 else
 echo "Failed to Delete Signatory";
