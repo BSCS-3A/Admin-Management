@@ -54,3 +54,9 @@
 
 *added backFun_editSig_v0_1.php
 -edit signatory
+
+*edit backFun_delSig_v0_1.php
+-removed debug code
+
+*edit backFun_editSig_v0_1.php
+-removed debug code
