@@ -42,3 +42,15 @@
 
 *deleted backFun_resetDBtable_v0_1.php
 -truncating table vote_event is transfered to backFun_setcountdown_v0_1.php 
+
+*added front_signatory_v0_1.php
+-added insert table from database
+
+*added backFun_adSig_v0_1.php
+-add signatory
+
+*added backFun_delSig_v0_1.php
+-delete signatory
+
+*added backFun_editSig_v0_1.php
+-edit signatory
