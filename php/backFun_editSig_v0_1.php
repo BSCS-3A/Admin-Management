@@ -16,9 +16,8 @@ $query = mysqli_query($connection, $update);
 if($query){
 echo "Signatory Updated Successfully";
     //For Logs
-    $id= "SELECT * FROM signatory_table WHERE id = '$_POST['update_id']' ";
-    $_SESSION['action'] = 'updated Signatory : ' . $id ;
-    include 'backFun_adLogs_v0_1.php';
+    $_SESSION['action'] = 'updated Signatory : ' . $_POST['signame'] ;
+    include 'backFun_actLogs_v0_1.php';
 
 
 }
