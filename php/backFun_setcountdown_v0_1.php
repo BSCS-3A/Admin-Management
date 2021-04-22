@@ -25,7 +25,11 @@ if (isset($_POST['editsched'])) {
      $vtevent = "INSERT INTO vote_event (`start_date`,`end_date`) 
       VALUES('$date $tstart', '$dateEnd $tends')";
       mysqli_query($db, $vtevent);
-  function_alert("Updating successful"); 
+  function_alert("Updating successful");
+      
+      //For Logs
+      $_SESSION['action'] = 'set Election Countdown.';
+      include 'backFun_actLogs_v0_1.php';
 
  }else{
    function_alert("Updating failed");
