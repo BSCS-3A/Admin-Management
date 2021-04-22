@@ -13,8 +13,8 @@ if($query){
 echo "Signatory Deleted Successfully";
  
    //For Logs
-   $id= "SELECT * FROM signatory_table WHERE id = '$_POST['DELETE_ID']' ";
-   $_SESSION['action'] = 'deleted Signatory : ' . $id ;
+   $signame = "SELECT signame FROM signatory_table WHERE id = '$_POST['DELETE_ID']' ";
+   $_SESSION['action'] = 'deleted Signatory : ' . $signame ;
    include 'backFun_adLogs_v0_1.php';
 }
 else
