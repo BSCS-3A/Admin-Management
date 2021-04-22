@@ -139,7 +139,7 @@ header to cheader
                                   // Create connection
                                   include "db_conn.php";
                                   mysqli_query($conn, "DELETE FROM admin_activity_log WHERE activity_date < DATE_SUB(NOW(), INTERVAL 1 MONTH)");
-                                  $results = mysqli_query($conn, "SELECT activity_time, activity_date, admin_id, activity_description, username FROM admin INNER JOIN admin_activity_log ON admin.admin_id = admin_activity_log.admin_id");
+                                  $results = mysqli_query($conn, "SELECT activity_time, activity_date, activity_description, username FROM admin INNER JOIN admin_activity_log ON admin.admin_id = admin_activity_log.admin_id");
 
                                   while($row = mysqli_fetch_array($results))
                                   {
