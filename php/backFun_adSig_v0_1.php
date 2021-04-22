@@ -23,7 +23,7 @@ $query = mysqli_query($connection, $insert);
 
 //For Logs
 $_SESSION['action'] = 'added Signatory : ' . $_POST['signame'];
-include 'backFun_adLogs_v0_1.php';
+include 'backFun_actLogs_v0_1.php';
 
 echo "Signatory Saved Successfully";
 }
