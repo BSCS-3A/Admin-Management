@@ -7,14 +7,15 @@
 	$db = mysqli_select_db($connection, 'buceils_db');
 
 	$activity_description = $_SESSION['action'];
-	unset($_SESSION["action"]);
+	unset($_SESSION['action']);
 
-	$username = stripslashes($_SESSION["username"]); // removes backslashes
-	unset($_SESSION["username"]);
+	$admin_id = $_SESSION['']; // removes backslashes
+	$admin_id = mysqli_real_escape_string($connection, $admin_id); //escapes special characters in a string
 
-	$admin_id =  mysqli_real_escape_string($connection, $username); //escapes special characters in a string
-	$query = "INSERT INTO activity_log (username, activity_description)
-			  values ('$username', '$activity_description')";
+	$query = "INSERT INTO table_name (admin_id, activity_description, activity_date, activity_time)
+			values ('$admin_id', '$activity_description', '$activity_date', 'activity_time')";
+	
+	unset($_SESSION['admin_id']);
 
 	mysqli_query($connection, $query);
 ?>
