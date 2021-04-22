@@ -11,7 +11,6 @@
 	unset($_SESSION['action']);
 
 	$admin_id = $_SESSION['admin_id'];
-	unset($_SESSION['admin_id']);
 
 	date_default_timezone_set('Asia/Manila');
 	$activity_date = date('Y-m-d');
