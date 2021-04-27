@@ -150,7 +150,7 @@
           <h4 class="modal-title custom_align" id="Heading">Add an entry</h4>
       </div>
 
-<form action="../php/backFun_adSig_v0_1.php" method="POST" autocomplete="off">
+<form action="../php/backFun_adSig_v1.php" method="POST" autocomplete="off">
   <?php
   $sql = "SELECT * FROM admin_table";
   $result = mysqli_query($connection,$sql);
