@@ -6,7 +6,7 @@ $sigfname = $_POST['sigfname'];
 $siglname = $_POST['siglname'];
 $sigpos = $_POST['sigpos'];
 $file = file_get_contents('../php/sig_array.txt');
-$decoded = json_decode($file, true);
+$decode = json_decode($file, true);
 
 
 $fname_query = "SELECT * FROM admin_table WHERE admin_fname = '$sigfname'";
@@ -27,10 +27,13 @@ $position_query_run = mysqli_query($connection, $position_query);
           if(mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
               $source = $row['admin_id'];
-              $string = $source . $decoded;
+              $string =  $decode .",". $source;
               $encodedString = json_encode($string);
               file_put_contents('sig_array.txt',($encodedString));
-
+              echo"<script language='javascript'>
+              alert('Signatory Added');
+              </script>
+              ";
             }
           }
 
