@@ -106,11 +106,12 @@
               <?php
               $file = file_get_contents('../php/sig_array.txt');
               $decoded = json_decode($file, true);
-              $id = str_split($decoded);
+              $id = explode(",",$decoded);
+              $id = array_filter($id);
               $in = '(' . implode(',', $id) .')';
-              print_r($id);
-              $query = "SELECT * FROM admin_table WHERE admin_id IN". $in;;
+              $query = "SELECT * FROM admin_table WHERE admin_id IN". $in;
               $query_run = mysqli_query($connection, $query);
+              error_reporting(E_ERROR | E_PARSE);
               ?>
 
       <table class= "center" id="datatable" width="100%" cellspacing="0" cellpadding="2px">
@@ -123,7 +124,7 @@
                               </tr>
                           </thead>
                           <tbody>
-                          <<?php    while ($row = mysqli_fetch_array($query_run)) { #START OF FETCHING OF RECORDS FROM DATABASE  ?>
+                          <?php    while ($row = mysqli_fetch_array($query_run)) { #START OF FETCHING OF RECORDS FROM DATABASE  ?>
 
                                     <tr>
                                       <td><?php  echo $row['admin_fname'];?></td>
@@ -232,15 +233,17 @@
                     <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
           </div>
                 <div class="modal-body">
-                  <form action="../php/action.php" method="POST">
-                  <input type="hidden" name="Delete_ID"id="Delete_ID">
+                  <form action="../php/backFun_delSig_v0_1.php" method="POST" autocomplete="off">
+                  <input type="hidden" name="signatory_fname"id="signatory_fname">
+                  <input type="hidden" name="signatory_lname"id="signatory_lname">
+                  <input type="hidden" name="signatory_position"id="signatory_position">
                 <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this signatory?</div>
               <div class="modal-footer ">
               <button type="submit" class="btn btn-success" name="yes"id="continue"><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
               <button type="button" class="btn btn-default" id= "no" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
             </div>
             </div>
-          </form>
+            </form>
               </div>
           <!-- /.modal-content -->
         </div>
@@ -409,28 +412,11 @@ autocomplete(document.getElementById("sigpos"), document.getElementById("sigfnam
                 var data = $tr.children("td").map(function() {
                     return $(this).text();
                 }).get();
-
                 console.log(data);
+                $('#signatory_fname').val(data[0]);
+                $('#signatory_lname').val(data[1]);
+                $('#signatory_position').val(data[2]);
 
-                $('#Delete_ID').val(data[0]);
-
-            });
-        });
-</script>
-
-<script>
-        $(document).ready(function() {
-            $('.editbtn').on('click', function() {
-
-                $tr = $(this).closest('tr');
-
-                var data = $tr.children("td").map(function() {
-                    return $(this).text();
-                }).get();
-
-                console.log(data);
-
-                $('#update_id').val(data[0]);
             });
         });
 </script>
