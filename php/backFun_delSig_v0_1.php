@@ -5,7 +5,7 @@ $db = mysqli_select_db($connection, 'buceils_db');
 $sigfname = (isset($_POST['signatory_fname']) ? $_POST['signatory_fname'] : '');
 $siglname = (isset($_POST['signatory_lname']) ? $_POST['signatory_lname'] : '');
 $sigpos = (isset($_POST['signatory_position']) ? $_POST['signatory_position'] : '');
-$file = file_get_contents('../php/sig_array.txt');
+$file = file_get_contents('../php/sig_array.json');
 $decode = json_decode($file, true);
 
 $fname_query = "SELECT * FROM admin_table WHERE admin_fname = '$sigfname'";
@@ -31,7 +31,7 @@ if(mysqli_num_rows($fname_query_run) >0){
         unset($id[$key]);
         $string = implode (", ", $id);
         $encodedString = json_encode($string);
-        file_put_contents('sig_array.txt',($encodedString));
+        file_put_contents('sig_array.json',($encodedString));
         echo"<script language='javascript'>
         alert('Signatory Deleted');
         </script>
