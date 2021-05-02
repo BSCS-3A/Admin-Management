@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/dataTables.bootstrap.css">
     <link rel="stylesheet" href="../assets/css/font-awesome.css">
+    <link rel="stylesheet" href="../assets/css/autocomplete.css">
     <script src="../assets/js/jquery-1.11.1.min.js"></script>
     <script src="../assets/js/jquery.dataTables.min.js"></script>
     <script src="../assets/js/dataTables.bootstrap.js" ></script>
