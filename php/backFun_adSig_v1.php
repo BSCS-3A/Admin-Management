@@ -5,9 +5,11 @@ $db = mysqli_select_db($connection, 'buceils_db');
 $sigfname = $_POST['sigfname'];
 $siglname = $_POST['siglname'];
 $sigpos = $_POST['sigpos'];
-$file = file_get_contents('../php/sig_array.txt');
+$file = file_get_contents('../php/sig_array.json');
 $decode = json_decode($file, true);
-
+$arrtab = explode(",",$decode);
+$arrtab = array_filter($arrtab);
+$source = null;
 
 $fname_query = "SELECT * FROM admin_table WHERE admin_fname = '$sigfname'";
 $lname_query = "SELECT * FROM admin_table WHERE admin_lname = '$siglname'";
@@ -27,13 +29,24 @@ $position_query_run = mysqli_query($connection, $position_query);
           if(mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
               $source = $row['admin_id'];
-              $string =  $decode .",". $source;
-              $encodedString = json_encode($string);
-              file_put_contents('sig_array.txt',($encodedString));
-              echo"<script language='javascript'>
-              alert('Signatory Added');
-              </script>
-              ";
+              if(array_search($source,$arrtab) == true){
+                echo"<script language='javascript'>
+                alert('Signatory already exist');
+                </script>
+                ";
+
+              }
+              else{
+                $source = $row['admin_id'];
+                $arrtab = implode(",",$arrtab);
+                $string = $arrtab .",". $source;
+                $encodedString = json_encode($string);
+                file_put_contents('sig_array.json',($encodedString));
+                echo"<script language='javascript'>
+                alert('Signatory Added');
+                </script>
+                ";
+              }
             }
           }
 
