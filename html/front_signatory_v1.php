@@ -14,6 +14,7 @@
     <script src="../assets/js/jquery.dataTables.min.js"></script>
     <script src="../assets/js/dataTables.bootstrap.js" ></script>
     <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/tablesort.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 
@@ -104,7 +105,7 @@
                 $db = mysqli_select_db($connection, 'buceils_db');
               ?>
               <?php
-              $file = file_get_contents('../php/sig_array.txt');
+              $file = file_get_contents('../php/sig_array.json');
               $decoded = json_decode($file, true);
               $id = explode(",",$decoded);
               $id = array_filter($id);
@@ -114,7 +115,7 @@
               error_reporting(E_ERROR | E_PARSE);
               ?>
 
-      <table class= "center" id="datatable" width="100%" cellspacing="0" cellpadding="2px">
+      <table class= "table-sortable" id="datatable" width="100%" cellspacing="0" cellpadding="2px">
                           <thead>
                               <tr>
                                 <th class="text-center">FIRST NAME</th>
